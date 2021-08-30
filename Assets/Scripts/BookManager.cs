@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using com.pison;
@@ -13,7 +14,7 @@ using UnityEngine;
 		// Public Variables
 		public Riddles riddles;
 		public AutoFlip book;
-		
+
 		public Animator textAnimator;
 		public TMP_Text riddleText;
 		
@@ -28,7 +29,6 @@ using UnityEngine;
 		{
 			//FADE OUT
 			//THEN FLIP PAGE
-			Debug.Log("Next Page");
 			textAnimator.SetTrigger("FadeOut");
 			yield return new WaitForSeconds(1.5f);
 			book.FlipRightPage();
@@ -48,12 +48,18 @@ using UnityEngine;
 		
 		#region Private Helpers
 		
+		private void OnTextFadeIn()
+		{
+			
+		}
 		
 		#endregion
 		
 		
 		#region Unity Functions
 		
+		
+
 		void Start()
 		{
 			riddleText.text = riddles.riddles[riddleIndex];
