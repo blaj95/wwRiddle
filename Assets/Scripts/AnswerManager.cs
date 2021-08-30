@@ -48,7 +48,7 @@ namespace com.pison
 			}
 			else
 			{
-				
+				answerInput.interactable = true;
 			}
 
 			checking = false;
