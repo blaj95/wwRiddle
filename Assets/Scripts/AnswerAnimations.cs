@@ -8,22 +8,17 @@ namespace com.pison
 	/// 
 	/// 
 	/// Written by: Brodey Lajoie (blajoie95@gmail.com), 2020
-	public class AudioManager : MonoBehaviour
+	public class AnswerAnimations : MonoBehaviour
 	{
 		// Public Variables
-		public AudioSource writingAudioSource;
-		public List<AudioClip> writingClips;
-		
+		public List<Animator> animators;
+
+		public List<float> animationTimes;
 		// Private Variables
 		
 		
 		#region Public API
-
-		public void PlayWritingClip()
-		{
-			int clipIndex = Random.Range(0, 3);
-			writingAudioSource.PlayOneShot(writingClips[clipIndex]);
-		}
+		
 		
 		
 		#endregion

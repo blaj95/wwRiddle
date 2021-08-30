@@ -13,7 +13,8 @@ namespace com.pison
 	{
 		// Public Variables
 		public BookManager bookManager;
-
+		public AnswerAnimations answerAnimations;
+		
 		public TMP_InputField answerInput;
 		
 		// Private Variables
@@ -23,11 +24,22 @@ namespace com.pison
 
 		public void CheckAnswer()
 		{
-			if (answerInput.text.ToLower() == bookManager.riddles.answers[bookManager.riddleIndex].ToLower())
+			if (answerInput.text.ToLower().Contains(bookManager.riddles.answers[bookManager.riddleIndex].ToLower()))
 			{
-				bookManager.FlipPage();
+
+				StartCoroutine("PlayAnswerAnimation");
 				answerInput.text = "";
+				answerInput.interactable = false;
 			}
+		}
+
+		IEnumerator PlayAnswerAnimation()
+		{
+			answerAnimations.animators[bookManager.riddleIndex].SetTrigger("Correct");
+			yield return new WaitForSeconds(answerAnimations.animationTimes[bookManager.riddleIndex]);
+			answerAnimations.animators[bookManager.riddleIndex].gameObject.SetActive(false);
+			bookManager.FlipPage();
+			answerInput.interactable = true;
 		}
 		
 		
