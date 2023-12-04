@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/BookScene.unity
     guid: 45db2a3d82b5a1f4bac228dc19dbcec4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DatabaseTest.unity
     guid: 37dadf1b7ac99f948ad6f897c744344a
   - enabled: 0
     path: Assets/SDKs/FirebaseWebGL/Examples/Database/DatabaseExampleScene.unity
     guid: 603a0099269441d4fa0bc8b10bbfccd7
+  - enabled: 1
+    path: Assets/Scenes/NewVideoTest.unity
+    guid: 1e084670048214643894d4043c00ea1a
   m_configObjects: {}
